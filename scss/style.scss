@@ -1,3 +1,7 @@
+// Colors
+$nav-red: #f54538;
+$nav-background: #070707;
+
 /* Components */
 .logo {
     font-family: 'Lobster', cursive;
@@ -7,7 +11,7 @@
 }
 
 .logo--primary {
-    background-color: #f54538;
+    background-color: $nav-red;
     border-radius: 50%;
     height: 48px;
     width: 48px;
@@ -19,7 +23,7 @@
 .nav {
     display: flex;
     justify-content: space-between;
-    background-color: #070707;
+    background-color: $nav-background;
     position: sticky;
     top: 0;
     padding: 12px 10%;
@@ -41,7 +45,7 @@
 }
 
 .nav__link--primary {
-    background-color: #f54538;
+    background-color: $nav-red;
     border-radius: 16px;
 
 }
