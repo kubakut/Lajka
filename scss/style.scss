@@ -1,38 +1,66 @@
 // Colors
-$nav-red: #f54538;
-$nav-background: #070707;
+$primary-color: #f54538;
+$secondary-color: #070707;
 
+/* Breakpoints */
+$breakpoint-xs: 640px;
+
+/* Grid */
+.wrapper {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+}
 /* Components */
 .logo {
     font-family: 'Lobster', cursive;
     color: #fff;        
     font-size: 20px;   
-    margin: 0;           
+    margin: 0;  
+
+    @media screen and (min-width: $breakpoint-xs) {
+        font-size: 25px;        
+    }         
 }
 
 .logo--primary {
-    background-color: $nav-red;
+    background-color: $primary-color;
     border-radius: 50%;
     height: 48px;
     width: 48px;
     line-height: 48px;
     text-align: center;
     flex: 0 0 48px;
+
+    @media screen and (min-width: $breakpoint-xs) {
+        width: 60px;
+        height: 60px;    
+        line-height: 60px;   
+        flex-basis: 60px; 
+    } 
 }
 
-.nav {
-    display: flex;
-    justify-content: space-between;
-    background-color: $nav-background;
+.nav {   
+    background-color: $secondary-color;
     position: sticky;
     top: 0;
-    padding: 12px 10%;
+    padding: 12px 0;
+
+    @media screen and (min-width: $breakpoint-xs) {
+        padding: 15px 0; 
+    } 
+}
+
+.nav__wrapper {
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav__container {
     display: flex;
     padding: 0;
     list-style-type: none;
+    align-items: center;
 }
 
 .nav__link {
@@ -41,11 +69,75 @@ $nav-background: #070707;
     font-size: 16px;
     font-family: "Montserrat", sans-serif;
     padding: 8px 16px;    
-    margin-left: 40px;
+    margin-left: 10px;
+
+    @media screen and (min-width: $breakpoint-xs) {
+        font-size: 20px; 
+        padding: 10px 20px;
+        margin-left: 20px;
+    }
 }
 
 .nav__link--primary {
-    background-color: $nav-red;
+    background-color: $primary-color;
     border-radius: 16px;
 
+    @media screen and (min-width: $breakpoint-xs) {
+        border-radius: 20px;
+    }
+
+}
+
+.main-image {
+    width: 100%;
+    height: 110%;
+    object-fit: contain;
+}
+
+.section {    
+    background: radial-gradient(#525252, #131313);
+    min-height: calc(100vh - 74px);
+    text-align: center;
+    color: #fff;
+}
+
+.section__wrapper {
+    display: grid;
+    align-items: center;
+    grid-template-rows: 1fr 2fr 1fr;
+}
+
+.section__title {
+    font-family: 'Lobster', cursive;
+    font-size: 64px;
+    font-weight: lighter;
+    margin: 0;
+
+    @media screen and (min-width: $breakpoint-xs) {
+        justify-self: start;   
+    }
+}
+
+.section__subtitle, 
+.section__paragraph {
+    font-family: "Montserrat", sans-serif;    
+    margin: 0;
+}
+
+.section__info {
+    @media screen and (min-width: $breakpoint-xs) {
+        justify-self: end;   
+    }
+}
+
+.section__subtitle {    
+    font-size: 28px;
+    font-weight: 700;
+    padding-bottom: 24px;    
+}
+
+.section__paragraph {    
+    font-size: 20px;  
+    padding-bottom: 30px; 
+    
 }
